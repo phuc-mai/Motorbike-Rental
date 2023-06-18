@@ -124,7 +124,7 @@ const ModelsPage = () => {
                   <p>{model.mileage}</p>
                 </div>
               </div>
-              <a to="/">Book Ride</a>
+              <a href="/">Book Ride</a>
             </div>
           </div>
         ))}

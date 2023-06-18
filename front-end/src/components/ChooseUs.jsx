@@ -15,7 +15,7 @@ const ChooseUs = () => {
             the bank. Our deals are designed to give you the ultimate renting
             experience, so don't miss out on your chance to save big.
           </p>
-          <a href="#home">Find Details &nbsp; &#9658;</a>
+          <a href="/models">Find Details &nbsp; &#9658;</a>
         </div>
         <div className="choose-us__details__right">
           <div className="choose-us__details__right__box">

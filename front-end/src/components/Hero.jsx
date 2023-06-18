@@ -23,7 +23,7 @@ const Hero = () => {
             <Link className="hero__content__btns__book-ride" to="/">
               Book Ride &nbsp; &#x2713;
             </Link>
-            <Link className="hero__content__btns__learn-more" to="/">
+            <Link className="hero__content__btns__learn-more" to="/models">
               Learn More &nbsp; &#9658;
             </Link>
           </div>

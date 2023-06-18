@@ -43,7 +43,7 @@ const Faq = () => {
             deal that fits your budget and requirements, ensuring you get the
             most value for your money. By comparing various options, you can
             find deals that offer lower prices, additional services, or better
-            car models. You can find motorbike rental deals by researching online and
+            motorbike models. You can find motorbike rental deals by researching online and
             comparing prices from different rental companies.
           </div>
         </div>
