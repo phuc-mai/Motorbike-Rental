@@ -12,7 +12,7 @@ const DownloadApp = () => {
         </div>
       </div>
       <div className='download-app__right'>
-        <img src='images/app.webp'/>
+        <img src='images/app.jpg'/>
       </div>
     </section>
   )

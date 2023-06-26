@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import MOTOR_DATA from "./ModelsData";
 import Dialog from "@material-ui/core/Dialog";
 
+
 const Booking = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
+  // Take value of Booking inputs
   const [motorName, setMotorName] = useState("TVS Raider");
   const [pickPlace, setPickPlace] = useState("Downtown Toronto");
   const [dropPlace, setDropPlace] = useState("Old Montreal Town");
@@ -14,23 +16,37 @@ const Booking = () => {
   const handleMotorName = (e) => {
     setMotorName(e.target.value);
   };
-
   const handlePickPlace = (e) => {
     setPickPlace(e.target.value);
   };
-
   const handleDropPlace = (e) => {
     setDropPlace(e.target.value);
   };
-
   const handlePickDate = (e) => {
     setPickDate(e.target.value);
   };
-
   const handleDropDate = (e) => {
     setDropDate(e.target.value);
   };
 
+  // Open Reservation when all inputs are fulfilled
+  const openReservation = (e) => {
+    const errorMsg = document.querySelector(".error-message");
+    if (
+      motorName === "" ||
+      pickPlace === "" ||
+      dropPlace === "" ||
+      pickDate === "" ||
+      dropDate === "" 
+    ) {
+      errorMsg.style.display = "flex";
+    } else {
+      setIsFormOpen(true);
+      errorMsg.style.display = "none";
+    }
+  };
+
+  // Show Motorbike Image on Reservation
   const findMotorImg = (name) => {
     const pickedMotor = MOTOR_DATA.filter((motor) => {
       return motor.name === name;
@@ -38,6 +54,7 @@ const Booking = () => {
     return pickedMotor[0]?.img;
   };
 
+  // Take value of Reservation inputs
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -50,103 +67,119 @@ const Booking = () => {
   const handleFirstName = (e) => {
     setFirstName(e.target.value);
   };
-
   const handleLastName = (e) => {
     setLastName(e.target.value);
   };
-
   const handlePhone = (e) => {
     setPhone(e.target.value);
   };
-
   const handleAge = (e) => {
     setAge(e.target.value);
   };
-
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
-
   const handleAdress = (e) => {
     setAddress(e.target.value);
   };
-
   const handleCity = (e) => {
     setCity(e.target.value);
   };
-
   const handleZipCode = (e) => {
     setZipCode(e.target.value);
+  };
+
+  // Hide message
+  const hideMessage = () => {
+    const doneMsg = document.querySelector(".booking-done");
+    doneMsg.style.display = "none";
+  };
+
+  // Confirm Reservation
+  const confirmBooking = (e) => {
+    e.preventDefault();
+    setIsFormOpen(false);
+    const doneMsg = document.querySelector(".booking-done");
+    doneMsg.style.display = "flex";
   };
 
   return (
     <section className="booking">
       <h1>Book Motorbike</h1>
 
+      <p className="error-message">
+        All fields required!
+      </p>
+
+      <p className="booking-done">
+        Check your email to confirm an order.{" "}
+        <i onClick={hideMessage} className="fa-solid fa-xmark"></i>
+      </p>
+
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setIsFormOpen(true);
+          openReservation()
         }}
       >
         <div className="motor-type">
           <label for="motor-name">
-            <i class="fa-solid fa-motorcycle"></i>&nbsp; Your Motorbike
+            <i class="fa-solid fa-motorcycle"></i>&nbsp; Your Motorbike <b>*</b>
           </label>
           <select value={motorName} onChange={handleMotorName} id="motor-name">
             <option value="TVS Raider">TVS Raider</option>
             <option value="Royal Enfield Scram 411">
-              Royal Enfield Scram 411
+              Royal Enfield
             </option>
-            <option value="Hero XPulse 200T 4V">Hero XPulse 200T 4V</option>
-            <option value="BMW G 310 GS">BMW G 310 GS</option>
+            <option value="Hero XPulse 200T 4V">Hero XPulse</option>
+            <option value="BMW G 310 GS">BMW G</option>
             <option value="Royal Enfield Himalayan">
-              Royal Enfield Himalayan
+              Royal Enfield
             </option>
-            <option value="BMW R 1250 GS">BMW R 1250 GS</option>
+            <option value="BMW R 1250 GS">BMW R</option>
           </select>
         </div>
 
         <div className="pickup-place">
           <label for="pick-place">
-            <i class="fa-solid fa-location-dot"></i>&nbsp; Pick-up Location
+            <i class="fa-solid fa-location-dot"></i>&nbsp; Pick-up Location <b>*</b>
           </label>
           <select value={pickPlace} onChange={handlePickPlace} id="pick-place">
-            <option value="Downtown Toronto">Downtown Toronto</option>
-            <option value="Niagara Falls">Niagara Falls</option>
+            <option value="Downtown Toronto">Toronto</option>
+            <option value="Niagara Falls">Niagara</option>
             <option value="Ottawa's Parliament Hill">
-              Ottawa's Parliament Hill
+              Ottawa
             </option>
-            <option value="Banff National Park">Banff National Park</option>
+            <option value="Banff National Park">Alberta</option>
             <option value="Capilano Suspension Bridge">
-              Capilano Suspension Bridge
+              Vancouver
             </option>
-            <option value="Old Montreal Town">Old Montreal Town</option>
+            <option value="Old Montreal Town">Montreal</option>
           </select>
         </div>
 
         <div className="dropoff-place">
           <label for="drop-place">
-            <i class="fa-solid fa-location-dot"></i>&nbsp; Drop-off Location
+            <i class="fa-solid fa-location-dot"></i>&nbsp; Drop-off Location <b>*</b>
           </label>
           <select value={dropPlace} onChange={handleDropPlace} id="drop-place">
-            <option value="Old Montreal Town">Old Montreal Town</option>
+            <option value="Old Montreal Town">Montreal</option>
             <option value="Ottawa's Parliament Hill">
-              <option value="Niagara Falls">Niagara Falls</option>
-              Ottawa's Parliament Hill
+              Ottawa
             </option>
-            <option value="Banff National Park">Banff National Park</option>
-            <option value="Downtown Toronto">Downtown Toronto</option>
+            <option value="Niagara Falls">Niagara</option>
+            <option value="Banff National Park">Alberta</option>
+            <option value="Downtown Toronto">Toronto</option>
 
             <option value="Capilano Suspension Bridge">
-              Capilano Suspension Bridge
+              Vancouver
             </option>
           </select>
         </div>
 
         <div className="pickup-date">
           <label for="pick-date">
-            <i class="fa-regular fa-calendar-days"></i>&nbsp; Pick-up Date
+            <i class="fa-regular fa-calendar-days"></i>&nbsp; Pick-up Date <b>*</b>
           </label>
           <input
             type="date"
@@ -158,7 +191,7 @@ const Booking = () => {
 
         <div className="dropoff-date">
           <label for="drop-date">
-            <i class="fa-regular fa-calendar-days"></i>&nbsp; Drop-off Date
+            <i class="fa-regular fa-calendar-days"></i>&nbsp; Drop-off Date <b>*</b>
           </label>
           <input
             type="date"
@@ -172,7 +205,7 @@ const Booking = () => {
       </form>
 
       <Dialog
-        maxWidth={"md"}
+        maxWidth={{ xs: "300px", md: '600px' }}
         open={isFormOpen}
         onClose={() => setIsFormOpen(false)}
       >
@@ -309,7 +342,7 @@ const Booking = () => {
                     type="text"
                     placeholder="Enter your City"
                     value={city}
-                    onChange={setCity}
+                    onChange={handleCity}
                   />
                 </div>
                 <div className="zip-code">
@@ -329,7 +362,7 @@ const Booking = () => {
                 <p>Please send me latest news and updates</p>
               </div>
 
-              <button type="submit">RESERVE NOW</button>
+              <button type="submit" onClick={confirmBooking}>RESERVE NOW</button>
             </form>
           </div>
         </section>
