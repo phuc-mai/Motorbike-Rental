@@ -29,6 +29,7 @@ const Navbar = () => {
               <img src="images/Logo.png" alt="logo" />
             </Link>
           </div>
+
           <ul className="navbar__links">
             <li>
               <Link className="home-link" to="/">
@@ -61,7 +62,13 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          
           <div className="navbar__buttons">
+            {/* Hamburger icon */}
+            <div className="mobile-hamb" onClick={openNav}>
+              <i className="fa-solid fa-bars"></i>
+            </div>
+            
             <Link className="navbar__buttons__sign-in" to="/">
               Sign In
             </Link>
@@ -69,12 +76,6 @@ const Navbar = () => {
               Register
             </Link>
           </div>
-
-          {/* Hamburger icon */}
-          <div className="mobile-hamb" onClick={openNav}>
-            <i className="fa-solid fa-bars"></i>
-          </div>
-
         </div>
 
         {/* Mobile */}
