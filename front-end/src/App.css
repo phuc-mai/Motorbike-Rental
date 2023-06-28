@@ -219,7 +219,7 @@ body {
 .hero__content__text {
   position: relative;
   z-index: 3;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .hero__content__text h4 {
@@ -242,7 +242,7 @@ body {
 }
 
 .hero__content__text p {
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Rubik", sans-serif;
   color: #706f7b;
   line-height: 1.6;
@@ -290,8 +290,8 @@ body {
 
 .hero__content__img img {
   position: absolute;
-  right: 80px;
-  top: 160px;
+  right: 100px;
+  top: 120px;
   z-index: 2;
   width: 45%;
 }
@@ -1142,6 +1142,7 @@ body {
   background-color: #fa4226;
 }
 
+/* HeroPages section starts here */
 .hero-pages {
   height: 400px;
   background-image: url("/public/images/pages-background.jpg");
@@ -1190,11 +1191,13 @@ body {
   color: #ff4d30;
 }
 
+/* About Page starts here */
 .about-main {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 100px 150px;
+  justify-content: center;
+  gap: 80px;
+  padding: 100px 70px;
 }
 
 .about-main img {
@@ -1255,130 +1258,13 @@ body {
   line-height: 1.3;
 }
 
-.team-members {
-  padding: 100px 250px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 100px;
-}
-
-.member-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 20px 10px 0px rgba(0, 0, 0, 0.08);
-}
-
-.member-box img {
-  width: 100%;
-  height: 350px;
-  margin-bottom: 15px;
-}
-
-.member-box h3 {
-  font-size: 20px;
-  color: #010103;
-  margin-bottom: 10px;
-}
-
-.member-box p {
-  font-size: 17px;
-  color: #706f7b;
-  padding-bottom: 20px;
-}
-
-.contact {
-  display: flex;
-  justify-content: space-between;
-  padding: 100px 100px;
-  gap: 100px;
-}
-
-.contact-overall,
-.contact-form {
-  flex: 1;
-}
-
-.contact-overall h1 {
-  font-size: 50px;
-  line-height: 1.3;
-  margin-bottom: 40px;
-}
-
-.contact-overall p {
-  font-size: 17px;
-  line-height: 1.6;
-  font-family: "Rubik", sans-serif;
-  color: #706f7b;
-  max-width: 400px;
-  margin-bottom: 40px;
-}
-
-.contact-overall li {
-  list-style: none;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.contact-overall li a {
-  text-decoration: none;
-  color: #010103;
-}
-
-.contact-overall li a:hover {
-  color: #ff4d30;
-}
-
-.contact-form label {
-  display: block;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.contact-form label b {
-  color: #ff4d30;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 95%;
-  border: none;
-  outline: none;
-  padding: 15px 20px;
-  background-color: #f2f2f2;
-  margin-bottom: 25px;
-  font-size: 16px;
-}
-
-.contact-form textarea {
-  height: 200px;
-}
-
-.contact-form button {
-  width: 95%;
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #ff4d30;
-  box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.35);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.contact-form button:hover {
-  box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.6);
-  background-color: #fa4226;
-}
-
+/* Models Page starts here */
 .models {
-  padding: 100px 100px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
+  padding: 100px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
 }
 
 .model-box {
@@ -1446,6 +1332,129 @@ body {
   background-color: #fa4226;
 }
 
+/* Our Team Page starts here */
+.team-members {
+  padding: 100px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.member-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 20px 10px 0px rgba(0, 0, 0, 0.08);
+  width: 350px;
+}
+
+.member-box img {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 15px;
+}
+
+.member-box h3 {
+  font-size: 20px;
+  color: #010103;
+  margin-bottom: 10px;
+}
+
+.member-box p {
+  font-size: 17px;
+  color: #706f7b;
+  padding-bottom: 20px;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 100px 120px;
+}
+
+.contact-overall,
+.contact-form {
+  flex: 1;
+}
+
+.contact-overall h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.contact-overall p {
+  font-size: 17px;
+  line-height: 1.6;
+  font-family: "Rubik", sans-serif;
+  color: #706f7b;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.contact-overall li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact-overall li a {
+  text-decoration: none;
+  color: #010103;
+}
+
+.contact-overall li a:hover {
+  color: #ff4d30;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-form label b {
+  color: #ff4d30;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 95%;
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  background-color: #f2f2f2;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  height: 200px;
+}
+
+.contact-form button {
+  width: 95%;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #ff4d30;
+  box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.35);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.6);
+  background-color: #fa4226;
+}
+
 
 
 /* Media Responsive starts here */
@@ -1478,6 +1487,9 @@ body {
   }
   .booking form {
     grid-template-columns: 1fr 1fr;
+  }
+  .contact {
+    flex-direction: column;
   }
 }
 
@@ -1530,6 +1542,18 @@ body {
   .download-app__left__btns {
     justify-content: center;
   }
+  .about-main {
+    flex-direction: column;
+  }
+  .about-main-text {
+    text-align: center;
+  }
+  .about-main__stats {
+    grid-template-columns: 1fr;
+  }
+  .about-main__stats__box {
+    align-items: center;
+  }
 }
 
 @media (max-width: 800px) {
@@ -1572,6 +1596,9 @@ body {
   .motor img {
     max-width: 400px;
   }
+  .contact {
+    padding: 100px 50px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1581,6 +1608,9 @@ body {
   .booking {
     padding: 30px 20px;
   }
+  .process__title h1 {
+    font-size: 35px;
+  }
   .banner h1 {
     font-size: 30px;
   }
@@ -1589,6 +1619,12 @@ body {
   }
   .choose-us__details__right__box {
     flex-direction: column;
+  }
+  .download-app__left h1 {
+    font-size: 30px;
+  }
+  .models {
+    padding: 100px 30px;
   }
 }
 
